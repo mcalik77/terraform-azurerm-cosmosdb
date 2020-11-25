@@ -11,7 +11,7 @@
 
 # CosmosDB Module
 module "cosmos_db" {
-  source = "git::git@ssh.dev.azure.com:v3/AZBlue/OneAZBlue/terraform.devops.cosmos-db?ref=v0.6.0"
+  source = "git::git@github.com:mcalik77/terraform.cosmosdb.git?ref=v0.0.1"
   info = var.info
   tags = var.tags
   
