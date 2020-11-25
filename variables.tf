@@ -1,3 +1,11 @@
+# Environment variables should be used for authentication.
+#
+# ARM_SUBSCRIPTION_ID
+# ARM_CLIENT_ID
+# ARM_CLIENT_SECRET
+# ARM_TENANT_ID
+#
+# Reference the Azure Provider documentation for more information.
 variable info {
   type = object({
     domain      = string
@@ -7,6 +15,8 @@ variable info {
     environment = string
     sequence    = string
   })
+
+  description = "Info object used to construct naming convention for all resources."
 }
 
 variable tags {
@@ -14,13 +24,47 @@ variable tags {
     environment = string
     source      = string
   })
+
+  description = "Tags object used to tag resources."
 }
 
 # Resource Group
+variable resource_group_name {
+  default = "cosmosdb-test"
+}
 variable location {}
 
-#cosmosdb database
+# CosmosDB Database 
 variable database_name{}
+
+variable failover_location {
+    default = "westus2"
+}
+
+variable ip_range {
+    default = "204.153.155.151,104.42.195.92,40.76.54.131,52.176.6.30,52.169.50.45,52.187.184.26"
+}
+variable network_filter {
+    default = true
+}
+
+variable cosmosdb_offer_type {
+    default = "Standard"
+}
+
+variable cosmosdb_kind {
+    default = "GlobalDocumentDB"
+}
+
+variable cosmosdb_consistency_level {
+    default = "Session"
+}
+
+variable prefix{
+  default = "bcbsreplication"
+}
+
+// variable privateEndpointName {}
 
 variable private_endpoint{
   type = object (
@@ -37,7 +81,6 @@ variable "container_attributes" {
  type = list(object({
    container_name     = string
    partition_key_path = string
-   
   }
 ))
 }    
@@ -46,12 +89,9 @@ variable "container_attributes" {
 //   default = "1"
 // }
 
-// variable partition_key_path {}
-
 // variable container_name {}
 
-variable resource_group_name {}
-
+// variable partition_key_path {}
 
 variable max_throughput {}
 
@@ -62,10 +102,4 @@ variable "subnet_whitelist" {
    virtual_network_resource_group_name = string
   }
 ))
-}    
-
-
-
-
-
-
+} 
