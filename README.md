@@ -48,5 +48,5 @@ The following are the supported inputs for the module.
 | network_filter    | If you want to enable firewall for CosmosDB | `bool` | `true` | no |
 | container_name    |                                             | `string` | n/a | no |
 | max_throughput    | The throughput of SQL container (RU/s).The minimum value is 400 | `string` | n/a | no |
-| subnet | Name of the subnet used to lookup the subnet ID for the virtual machine. | `string` | `vnD01sn112` | no |
-| virtual_network | Name of the virtual network used to lookup the subnet ID for the virtual machine. | `string` | `vnetVelConD01` | no |
+| subnet | Name of the subnet used to lookup the subnet ID for the virtual machine. | `string` | `` | no |
+| virtual_network | Name of the virtual network used to lookup the subnet ID for the virtual machine. | `string` | `` | no |
