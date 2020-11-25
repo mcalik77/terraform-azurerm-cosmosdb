@@ -7,7 +7,7 @@ You can include the module by using the following code:
 ```
 # CosmosDB Module
 module "cosmos_db" {
-  source = "git::git@ssh.dev.azure.com:v3/AZBlue/OneAZBlue/terraform.devops.cosmos-db?ref=v0.5.9"
+  source = "git::"
   info = var.info
   tags = var.tags
   
